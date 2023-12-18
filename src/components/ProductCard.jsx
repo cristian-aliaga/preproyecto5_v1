@@ -6,7 +6,7 @@ export const ProductCard = () => {
   return (
     <div className="d-flex justify-content-around">
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="src/img/mario.jpg" />
+        <Card.Img variant="top" src="../img/mario.jpg" />
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>

@@ -1,23 +1,57 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { React ,useContext, useState } from "react";
+import { loginService, signupService } from "../services/user";
+import { UserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export const FormLogin = () => {
-    return (
-        <div className="d-flex justify-content-around">
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Correo Electrónico:</Form.Label>
-                    <Form.Control type="email" placeholder="usuario@dominio.com" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Contraseña:</Form.Label>
-                    <Form.Control type="password" placeholder="Contraseña" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
+  const [isMember, setIsMember] = useState(false);
+  const { token, setToken } = useContext(UserContext)
+  const navigate = useNavigate();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const dataObject = Object.fromEntries(formData);
+
+    if (isMember) {
+      const userData = await loginService(dataObject);
+      console.log(userData.detail.token)
+      setToken(userData.detail.token)
+      navigate("/products");
+    } else {
+      const userData = await signupService(dataObject);
+      console.log(userData.detail.token);
+      setToken(userData.detail.token)
+    }
+  }
+
+  return (
+    <section>
+      <form onSubmit={onSubmit}>
+        <h3>{isMember ? "Login" : "Register"}</h3>
+        {!isMember && (
+          <div>
+            <label htmlFor="firstName">Name</label>
+            <input id="firstName" type="text" name="firstName"></input>
+          </div>
+        )}
+        <div>
+          <label htmlFor="mail">Email</label>
+          <input id="mail" type="text" name="mail"></input>
         </div>
-    )
+        <div>
+          <label htmlFor="password">Password</label>
+          <input id="password" type="password" name="password"></input>
+        </div>
+        <button type="submit">Submit</button>
+        <p>
+          {isMember ? "Not a member yet?" : "Already a member?"}
+          <button type="button" onClick={() => setIsMember(!isMember)}>
+            {isMember ? "Register" : "Login"}
+          </button>
+        </p>
+      </form>
+    </section>
+  )
 }

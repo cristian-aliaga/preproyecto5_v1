@@ -4,17 +4,21 @@ import { Login } from '../src/pages/Login'
 import { Products } from '../src/pages/Products'
 import { SignUp } from '../src/pages/SignUp'
 import { NavBar } from '../src/components/NavBar'
+import { UserProvider } from './context/UserContext'
 
 function App() {
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
+      <UserProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </UserProvider>
     </>
   )
 }

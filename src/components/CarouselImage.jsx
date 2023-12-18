@@ -16,8 +16,8 @@ export const CarouselImage = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First Slider Image Title</h3>
-                            <p>First Slide decription.</p>
+                            <h3>Súper Mario Bross</h3>
+                            <p>Nintendo</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -28,8 +28,8 @@ export const CarouselImage = () => {
                             alt="Second slide"
                         />
                         <Carousel.Caption>
-                            <h3>Second slide Image </h3>
-                            <p>Second slide description</p>
+                            <h3>Súper Mario Bross</h3>
+                            <p>Nintendo</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -40,8 +40,8 @@ export const CarouselImage = () => {
                             alt="Third slide"
                         />
                         <Carousel.Caption>
-                            <h3>Third Slide Image</h3>
-                            <p>Third Slide Description.</p>
+                            <h3>Súper Mario Bross</h3>
+                            <p>Nintendo</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
