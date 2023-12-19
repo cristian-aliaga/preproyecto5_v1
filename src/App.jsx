@@ -10,15 +10,15 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* <UserProvider> */}
+      <UserProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<Products />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
-      {/* </UserProvider> */}
+      </UserProvider>
     </>
   )
 }
