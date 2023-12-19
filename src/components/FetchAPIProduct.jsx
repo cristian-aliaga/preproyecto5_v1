@@ -39,9 +39,9 @@ export const FetchAPIProduct = () => {
     <>
           {
           data.detail.map(item => (
-            <div class="d-flex justify-content-center d-inline-flex p-2">
-            <Card key={item._id} style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={`https://raw.githubusercontent.com/cristian-aliaga/preproyecto5_v1/main/puclic/${item.image}`} />
+            <div key={item._id} className="d-flex justify-content-center d-inline-flex p-2">
+            <Card style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={`https://raw.githubusercontent.com/cristian-aliaga/preproyecto5_v1/main/puclic/images/${item.image}`} />
               <Card.Body>
                 <Card.Title >{item.name}</Card.Title>
                 <Card.Text>

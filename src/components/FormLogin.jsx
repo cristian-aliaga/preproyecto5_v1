@@ -1,10 +1,14 @@
-import { React ,useContext, useState } from "react";
+import { React, useContext, useState } from "react";
 import { loginService, signupService } from "../services/user";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
 export const FormLogin = () => {
-  const [isMember, setIsMember] = useState(false);
+  const [isMember, setIsMember] = useState(true);
   const { token, setToken } = useContext(UserContext)
   const navigate = useNavigate();
 
@@ -15,43 +19,44 @@ export const FormLogin = () => {
     const dataObject = Object.fromEntries(formData);
 
     if (isMember) {
-      const userData = await loginService(dataObject);
+      const userData = await loginService(dataObject)
       console.log(userData.detail.token)
       setToken(userData.detail.token)
       navigate("/products");
     } else {
-      const userData = await signupService(dataObject);
-      console.log(userData.detail.token);
-      setToken(userData.detail.token)
+      console.log(e)
     }
   }
 
   return (
-    <section>
-      <form onSubmit={onSubmit}>
-        <h3>{isMember ? "Login" : "Register"}</h3>
-        {!isMember && (
-          <div>
-            <label htmlFor="firstName">Name</label>
-            <input id="firstName" type="text" name="firstName"></input>
-          </div>
-        )}
-        <div>
-          <label htmlFor="mail">Email</label>
-          <input id="mail" type="text" name="mail"></input>
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password"></input>
-        </div>
-        <button type="submit">Submit</button>
-        <p>
-          {isMember ? "Not a member yet?" : "Already a member?"}
-          <button type="button" onClick={() => setIsMember(!isMember)}>
-            {isMember ? "Register" : "Login"}
-          </button>
-        </p>
-      </form>
-    </section>
+    <>
+    <body className="m-0 row justify-content-center">
+      <div className="col-auto rounded-3 p-5 text-center">
+        <Form onSubmit={onSubmit} >
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={2}>
+              Email
+            </Form.Label>
+            <Col sm={{ span: 10 }}>
+              <Form.Control type="text" name="mail" placeholder="Email" id="mail" />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={2}>
+              Password
+            </Form.Label>
+            <Col sm={{ span: 10 }}>
+              <Form.Control type="password" name="password" placeholder="Password" id="password" />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Col sm={{ span: 10, offset: 2 }}>
+              <Button type="submit">Login</Button>
+            </Col>
+          </Form.Group>
+        </Form>
+      </div>
+      </body>
+    </>
   )
 }
