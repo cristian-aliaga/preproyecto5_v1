@@ -1,13 +1,23 @@
+import { useParams } from 'react-router-dom'
+
+// export const ProductDetail = () => {
+//     const { productName } = useParams()
+//     return (
+//         <div>{productName}</div>
+//     )
+// }
+
 import { useState, useEffect } from "react";
 import axios from "axios"
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
-export const FetchAPIProduct = () => {
+export const ProductDetail = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { productName } = useParams()
 
   useEffect(() => {
     const getData = async () => {
@@ -35,10 +45,14 @@ export const FetchAPIProduct = () => {
     return <div>Error: {error.message}</div>;
   }
 
+  const product = data.detail.filter(pilot => pilot.name === productName);
+  
   return (
     <>
           {
-          data.detail.map(item => (
+            
+          product.map(item => (
+            <section className="m-0 row justify-content-center">
             <div key={item._id} className="d-flex justify-content-center d-inline-flex p-2">
             <Card style={{ width: '18rem' }}>
               <Card.Img variant="top" src={`https://raw.githubusercontent.com/cristian-aliaga/preproyecto5_v1/main/puclic/images/${item.image}`} />
@@ -50,18 +64,16 @@ export const FetchAPIProduct = () => {
                 <Card.Text>
                   {item.price}
                 </Card.Text>
-                <Button  className="px-3 me-2" variant="primary">Comprar</Button>
-                <Button href={`/preproyecto5_v1/#products/${item.name}`} className="px-3" variant="secondary">Ver Detalles</Button>
+                <Card.Text>
+                  Stock: {item.stock}
+                </Card.Text>
+                <Button  variant="primary">Comprar</Button>
               </Card.Body>
             </Card>
             </div>
+            </section>
           ))
           }
     </>
   );
 }
-
-
-
-
-
