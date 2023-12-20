@@ -20,7 +20,7 @@ export const FormLogin = () => {
 
     if (isMember) {
       const userData = await loginService(dataObject)
-      console.log(userData.detail.token)
+      
       setToken(userData.detail.token)
       navigate("/products");
     } else {

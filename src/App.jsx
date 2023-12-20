@@ -7,6 +7,8 @@ import { NavBar } from '../src/components/NavBar'
 import { UserProvider } from './context/UserContext'
 import { MyProfile } from "./pages/MyProfile"
 import { ProductDetail } from "./routes/ProductDetail"
+import { UserProfile } from "./pages/UserProfile"
+import { UserDetail } from "./routes/UserDetail"
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/products/:productName" element={<ProductDetail />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<MyProfile />} />
+          <Route path="/userprofile" element={<UserProfile />} />
+          <Route path="/userprofile/:username" element={<UserDetail />} />
         </Routes>
       </UserProvider>
     </>

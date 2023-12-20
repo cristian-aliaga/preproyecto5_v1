@@ -5,7 +5,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
-export const ProductDetail = () => {
+export const UserComponent = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ export const ProductDetail = () => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          'https://preproyecto5.onrender.com/v1/product'
+          'https://preproyecto5.onrender.com/v1/user'
         );
         setData(response.data);
         setError(null);

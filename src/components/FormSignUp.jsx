@@ -20,12 +20,10 @@ export const FormSignUp = () => {
   
       if (isMember) {
         const userData = await loginService(dataObject);
-        console.log(userData.detail.token)
         setToken(userData.detail.token)
         navigate("/products");
       } else {
         const userData = await signupService(dataObject);
-        console.log(userData.detail.token);
         setToken(userData.detail.token)
         navigate("/products");
       }
