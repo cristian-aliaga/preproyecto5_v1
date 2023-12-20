@@ -5,6 +5,7 @@ import { Products } from '../src/pages/Products'
 import { SignUp } from '../src/pages/SignUp'
 import { NavBar } from '../src/components/NavBar'
 import { UserProvider } from './context/UserContext'
+import { MyProfile } from "./pages/MyProfile"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<Products />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/profile" element={<MyProfile />} />
         </Routes>
       </UserProvider>
     </>

@@ -51,7 +51,7 @@ export const FetchAPIProduct = () => {
                   {item.price}
                 </Card.Text>
                 <Button className="px-3 me-2" variant="primary">Comprar</Button>
-                <Button className="px-3" variant="secondary">Agregar al Carro</Button>
+                <Button className="px-3" variant="secondary">Ver Detalles</Button>
               </Card.Body>
             </Card>
             </div>

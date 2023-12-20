@@ -37,12 +37,12 @@ export const FormSignUp = () => {
             <Form onSubmit={onSubmit}>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Label>Correo Electrónico</Form.Label>
+                        <Form.Label>Correo Electrónico (Obligatorio)</Form.Label>
                         <Form.Control type="email" name="mail" placeholder="Ejemplo: corre@dominio.cl" />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword">
-                        <Form.Label>Contraseña</Form.Label>
+                        <Form.Label>Contraseña (Obligatorio)</Form.Label>
                         <Form.Control type="password" name="password" placeholder="Contraseña" />
                     </Form.Group>
                 </Row>

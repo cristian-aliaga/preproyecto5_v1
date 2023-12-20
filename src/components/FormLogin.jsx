@@ -30,33 +30,36 @@ export const FormLogin = () => {
 
   return (
     <>
-    <body className="m-0 row justify-content-center">
-      <div className="col-auto rounded-3 p-5 text-center">
-        <Form onSubmit={onSubmit} >
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={2}>
-              Email
+      <section className="m-0 row justify-content-center">
+        <div className="col-auto rounded-3 p-5 text-center">
+          <Form onSubmit={onSubmit} >
+            <Form.Label column sm={10}>
+              Por favor paciencia, una vez autenticado se redijirá a Productos.
             </Form.Label>
-            <Col sm={{ span: 10 }}>
-              <Form.Control type="text" name="mail" placeholder="Email" id="mail" />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={2}>
-              Password
-            </Form.Label>
-            <Col sm={{ span: 10 }}>
-              <Form.Control type="password" name="password" placeholder="Password" id="password" />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} className="mb-3">
-            <Col sm={{ span: 10, offset: 2 }}>
-              <Button type="submit">Login</Button>
-            </Col>
-          </Form.Group>
-        </Form>
-      </div>
-      </body>
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={2}>
+                Email
+              </Form.Label>
+              <Col sm={{ span: 10 }}>
+                <Form.Control type="text" name="mail" placeholder="Email" id="mail" />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={2}>
+                Password
+              </Form.Label>
+              <Col sm={{ span: 10 }}>
+                <Form.Control type="password" name="password" placeholder="Password" id="password" />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} className="mb-3">
+              <Col sm={{ span: 10, offset: 2 }}>
+                <Button type="submit">Login</Button>
+              </Col>
+            </Form.Group>
+          </Form>
+        </div>
+      </section>
     </>
   )
 }
