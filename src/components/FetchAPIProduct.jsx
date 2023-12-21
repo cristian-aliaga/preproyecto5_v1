@@ -28,7 +28,7 @@ export const FetchAPIProduct = () => {
   }, []);
 
   if (loading) {
-    return <div><h3>Cargando Productos...</h3></div>;
+    return <div><h3>Cargando Productos...Primera consulta puede tomar entre 10 a 20 segundos.</h3></div>;
   }
 
   if (error) {

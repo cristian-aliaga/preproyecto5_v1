@@ -52,7 +52,7 @@ export const MyProfileComponent = () => {
   }, []);
 
   if (loading) {
-    return <div><h3>Cargando Productos...</h3></div>;
+    return <div><h3>Cargando...</h3></div>;
   }
 
   if (error) {

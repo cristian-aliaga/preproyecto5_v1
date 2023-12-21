@@ -9,6 +9,7 @@ import { MyProfile } from "./pages/MyProfile"
 import { ProductDetail } from "./routes/ProductDetail"
 import { UserProfile } from "./pages/UserProfile"
 import { UserDetail } from "./routes/UserDetail"
+import { MercadoPago } from "./components/MercadoPago"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/profile" element={<MyProfile />} />
           <Route path="/userprofile" element={<UserProfile />} />
           <Route path="/userprofile/:username" element={<UserDetail />} />
+          <Route path="/mercadopago" element={<MercadoPago />} />
         </Routes>
       </UserProvider>
     </>

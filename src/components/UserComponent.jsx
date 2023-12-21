@@ -30,7 +30,7 @@ export const UserComponent = () => {
   }, []);
 
   if (loading) {
-    return <div><h3>Cargando Productos...</h3></div>;
+    return <div><h3>Cargando Usuario...</h3></div>;
   }
 
   if (error) {
