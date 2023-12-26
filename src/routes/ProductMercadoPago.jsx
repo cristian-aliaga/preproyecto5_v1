@@ -42,7 +42,7 @@ export const ProductMercadoPago = () => {
   const FuncionComprar = async (producto) => {
     const response = await axios.post(
       // "http://localhost:4000/Mercado_Pago",
-      "https://preproyecto5-mp.onrender.com",
+      "https://preproyecto5-mp.onrender.com/Mercado_Pago",
       producto
     );
     window.location.href = response.data;
