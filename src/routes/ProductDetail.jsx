@@ -58,7 +58,7 @@ export const ProductDetail = () => {
                 <Card.Text>
                   Stock: {item.stock}
                 </Card.Text>
-                <Button  variant="primary">Comprar</Button>
+                {/* <Button  variant="primary">Comprar</Button> */}
               </Card.Body>
             </Card>
             </div>
