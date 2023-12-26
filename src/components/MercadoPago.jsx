@@ -8,6 +8,7 @@ export const MercadoPago = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  console.log(data)
 
   useEffect(() => {
     const getData = async () => {
@@ -16,11 +17,9 @@ export const MercadoPago = () => {
           'https://preproyecto5.onrender.com/v1/product'
         );
         setData(response.data);
-        console.log(data)
         setError(null);
       } catch (err) {
         setError(err.message);
-        console.log(err.message)
         setData(null);
       } finally {
         setLoading(false);
@@ -46,13 +45,7 @@ export const MercadoPago = () => {
     window.location.href = response.mdata;
   };
 
-  console.log(data.detail)
-  console.log(typeof data.detail)
-
   const result = Object.values(data.detail);
-
-  console.log(result)
-  console.log(typeof result)
 
   return (
     <>

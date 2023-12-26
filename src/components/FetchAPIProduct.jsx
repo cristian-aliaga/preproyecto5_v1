@@ -50,7 +50,7 @@ export const FetchAPIProduct = () => {
                 <Card.Text>
                   {item.price}
                 </Card.Text>
-                <Button  className="px-3 me-2" variant="primary">Comprar</Button>
+                <Button href={`/preproyecto5_v1/#productsmp/${item.name}`} className="px-3 me-2" variant="primary">Comprar</Button>
                 <Button href={`/preproyecto5_v1/#products/${item.name}`} className="px-3" variant="secondary">Ver Detalles</Button>
               </Card.Body>
             </Card>

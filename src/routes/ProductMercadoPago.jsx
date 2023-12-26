@@ -5,7 +5,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
-export const ProductDetail = () => {
+export const ProductMercadoPago = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,6 +39,15 @@ export const ProductDetail = () => {
 
   const product = data.detail.filter(pilot => pilot.name === productName);
   
+  const FuncionComprar = async (producto) => {
+    const response = await axios.post(
+      // "http://localhost:4000/Mercado_Pago",
+      "https://preproyecto5-mp.onrender.com",
+      producto
+    );
+    window.location.href = response.data;
+  };
+
   return (
     <>
           {
@@ -56,9 +65,9 @@ export const ProductDetail = () => {
                   {item.price}
                 </Card.Text>
                 <Card.Text>
-                  Stock: {item.stock}
+                  Stock Mercado Pago: {item.stock}
                 </Card.Text>
-                <Button  variant="primary">Comprar</Button>
+                <Button  variant="primary" onClick={() => FuncionComprar(item)}>Comprar</Button>
               </Card.Body>
             </Card>
             </div>

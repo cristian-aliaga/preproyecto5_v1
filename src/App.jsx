@@ -10,6 +10,7 @@ import { ProductDetail } from "./routes/ProductDetail"
 import { UserProfile } from "./pages/UserProfile"
 import { UserDetail } from "./routes/UserDetail"
 import { MercadoPago } from "./components/MercadoPago"
+import { ProductMercadoPago } from "./routes/ProductMercadoPago"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productName" element={<ProductDetail />} />
+          <Route path="/productsmp/:productName" element={<ProductMercadoPago />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<MyProfile />} />
           <Route path="/userprofile" element={<UserProfile />} />
